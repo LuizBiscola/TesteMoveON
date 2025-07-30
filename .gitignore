@@ -1,0 +1,69 @@
+# .gitignore para projetos .NET / C#
+# Este arquivo ignora arquivos de build, configurações de IDE e segredos.
+
+# Pasta de cache e configurações de IDE (Visual Studio, Rider, VS Code)
+#-------------------------------------------------------------------
+.vs/
+.idea/
+.vscode/
+
+# Configurações de usuário específicas da IDE
+#-------------------------------------------------------------------
+*.suo
+*.user
+*.sln.docstates
+*.DotSettings.user
+
+# Pastas de Build e Publicação
+# Contêm os arquivos compilados (DLLs, EXEs) e não devem ser versionados.
+#-------------------------------------------------------------------
+[Bb]in/
+[Oo]bj/
+[Pp]ublish/
+publish/
+
+# Segredos e Configurações de Ambiente (MUITO IMPORTANTE)
+# Nunca coloque chaves de API ou strings de conexão em um repositório público.
+#-------------------------------------------------------------------
+secrets.json
+*.secrets.json
+appsettings.Development.json
+appsettings.*.json
+!appsettings.Template.json # O '!' permite um arquivo de template, se você quiser
+
+# Arquivos de Pacotes NuGet
+# O gerenciamento de pacotes é feito pelo arquivo .csproj, então os pacotes baixados podem ser ignorados.
+#-------------------------------------------------------------------
+*.nupkg
+*.nuget.props
+*.nuget.targets
+packages/
+
+# Arquivos de Testes e Logs
+#-------------------------------------------------------------------
+TestResults/
+*.trx
+*.log
+logs/
+
+# Arquivos gerados pelo Sistema Operacional
+#-------------------------------------------------------------------
+# Windows
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Arquivos temporários
+#-------------------------------------------------------------------
+*.tmp
+*.temp
+
+# Arquivos de cache diversos
+#-------------------------------------------------------------------
+*.[Cc]ache
+*.orig
