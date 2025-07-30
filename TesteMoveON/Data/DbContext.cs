@@ -1,3 +1,5 @@
+using TesteMoveON.Models;
+
 namespace TesteMoveON.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,4 +9,6 @@ public class AppDbContext : DbContext
     {
         
     }
+
+    public DbSet<Book> Books{ get; set; }
 }
