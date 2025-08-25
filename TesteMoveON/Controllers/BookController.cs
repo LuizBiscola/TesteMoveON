@@ -11,17 +11,20 @@ namespace TesteMoveON
     [ApiController]
     public class BookController : ControllerBase
     {
-        public BookController(AppDbContext context)
+        private readonly AppDbContext _context;
+        private readonly ILogger<BookController> _logger;
+        
+        public BookController(AppDbContext context, ILogger<BookController> logger)
         {
             _context = context;
+            _logger = logger;
         }
-        
-        private readonly AppDbContext _context;
         
         // GET: api/<BookController>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<string>>> Get()
         {
+            _logger.LogInformation("Get foi chamadooooooo");
             var books = await _context.Books.ToListAsync();
             return Ok(books);
         }
